@@ -1,75 +1,92 @@
+GEN_Project_For_Retail_Store: Talk to a Database
 
-# AtliQ Tees: Talk to a Database  
+This is an end-to-end LLM project built using Google PaLM API and LangChain.
+It allows users to interact with a MySQL database using natural language.
+The system converts user questions into SQL queries, executes them, and returns accurate results.
 
-This is an end to end LLM project based on Google Palm and Langchain. We are building a system that can talk to MySQL database. 
-User asks questions in a natural language and the system generates answers by converting those questions to an SQL query and
-then executing that query on MySQL database. 
-AtliQ Tees is a T-shirt store where they maintain their inventory, sales and discounts data in MySQL database. A store manager 
-will may ask questions such as,
-- How many white color Adidas t shirts do we have left in the stock?
-- How much sales our store will generate if we can sell all extra-small size t shirts after applying discounts?
-The system is intelligent enough to generate accurate queries for given question and execute them on MySQL database
+The project simulates a T-shirt retail store that maintains inventory, sales, and discounts data.
+A store manager can ask questions such as:
 
-![](atliq_tees.png)
+How many white Adidas T-shirts are left in stock?
 
-## Project Highlights
+What is the total sales if all extra-small T-shirts are sold with discounts applied?
 
-- AtliQ Tees is a t shirt store that sells Adidas, Nike, Van Heusen and Levi's t shirts 
-- Their inventory, sales and discounts data is stored in a MySQL database
-- We will build an LLM based question and answer system that will use following,
-  - Google Palm LLM
-  - Hugging face embeddings
-  - Streamlit for UI
-  - Langchain framework
-  - Chromadb as a vector store
-  - Few shot learning
-- In the UI, store manager will ask questions in a natural language and it will produce the answers
+The system intelligently generates SQL queries and executes them on the MySQL database.
+
+Project Highlights
+
+Retail store inventory for brands like Adidas, Nike, Levi's, and Van Heusen.
+
+Inventory, sales, and discount data stored in MySQL.
+
+LLM-based Q&A system using:
+
+Google PaLM LLM
+
+Hugging Face embeddings
+
+Streamlit for UI
+
+LangChain framework
+
+ChromaDB as a vector store
+
+Few-shot learning
+
+The store manager can ask questions naturally, and the system will produce SQL-based answers instantly.
+
+Installation
+
+Clone this repository:
+
+git clone https://github.com/RohitGautam7972/GEN_Project_For_Retail_Store.git
 
 
-## Installation
+Navigate to the project folder:
 
-1.Clone this repository to your local machine using:
+cd GEN_Project_For_Retail_Store
 
-```bash
-  git clone https://github.com/codebasics/langchain.git
-```
-2.Navigate to the project directory:
 
-```bash
-  cd 4_sqldb_tshirts
-```
-3. Install the required dependencies using pip:
+Install dependencies:
 
-```bash
-  pip install -r requirements.txt
-```
-4.Acquire an api key through makersuite.google.com and put it in .env file
+pip install -r requirements.txt
 
-```bash
-  GOOGLE_API_KEY="your_api_key_here"
-```
-5. For database setup, run database/db_creation_atliq_t_shirts.sql in your MySQL workbench
 
-## Usage
+Add your Google PaLM API key in .env:
 
-1. Run the Streamlit app by executing:
-```bash
+GOOGLE_API_KEY="your_api_key_here"
+
+
+Set up the MySQL database:
+Run database/db_creation_atliq_t_shirts.sql in MySQL Workbench.
+
+Usage
+
+Run the Streamlit app:
+
 streamlit run main.py
 
-```
 
-2.The web app will open in your browser where you can ask questions
+The web app will open in your browser. Ask questions in natural language to get answers from the database.
 
-## Sample Questions
-  - How many total t shirts are left in total in stock?
-  - How many t-shirts do we have left for Nike in XS size and white color?
-  - How much is the total price of the inventory for all S-size t-shirts?
-  - How much sales amount will be generated if we sell all small size adidas shirts today after discounts?
-  
-## Project Structure
+Sample Questions
 
-- main.py: The main Streamlit application script.
-- langchain_helper.py: This has all the langchain code
-- requirements.txt: A list of required Python packages for the project.
-- few_shots.py: Contains few shot prompts
-- .env: Configuration file for storing your Google API key.
+How many total T-shirts are left in stock?
+
+How many Nike T-shirts are available in XS size and white color?
+
+What is the total price of all S-size T-shirts in inventory?
+
+How much sales revenue will be generated if all small Adidas T-shirts are sold today after discounts?
+
+Project Structure
+
+main.py: Streamlit application
+
+langchain_helper.py: LangChain logic
+
+requirements.txt: Python dependencies
+
+few_shots.py: Few-shot learning prompts
+
+.env: Google API key configuration
